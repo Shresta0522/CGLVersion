@@ -3,30 +3,34 @@ public class Cell extends Game {
 	
 	private int x;
 	private int y;
-	public static boolean aliveCell[][];
+//	private int[][] alive;
+	public boolean aliveCell;
 	
-	public Cell(int x,int y){
+	public Cell(int x,int y,boolean aliveCell){
 		this.x=x;
 		this.y=y;
+		this.aliveCell=aliveCell;
 		
 	}
 	
-	public boolean[][] alive() {
+	public boolean alive() {
 		return aliveCell;
 		
 		
-	}	
+	}
+	
+	
 	public int getx() {
 		return x;
 		
 	}
 	
 	public int gety() {
-		return x;
+		return y;
 		
 	}
 	
-//	public static int countLiveCells(int m,int n,boolean[][] board){
+//	public int countLiveCells(int m,int n,boolean[][] board){
 //        int live_cells=0;
 //        for(int i=m-1;i<=m+1;i++)
 //        {

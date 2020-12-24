@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Grid extends Game{
+public class Grid {
 
 	/**
      * Creates initial generation [board]
@@ -10,7 +10,8 @@ public class Grid extends Game{
 	
 //	private int l[][];
 	private int n;
-	public Grid() {
+	public Grid(int n) {
+		this.n=n;
 		
 	}
 	
@@ -53,29 +54,61 @@ public class Grid extends Game{
 	public int  getn(){
 		return n;
 	}
-	public static void manin(String args[]) {
-//		Scanner sc = new Scanner(System.in);
-//		        
-//		        // Reading size of the Board
-//		        int n = sc.nextInt();
-//		        
-//		        // Reading no. of initial live cells
-//		        int m = sc.nextInt();
-//		        int[][] l = new int[m][2];
-//		        int i = 0;
-//		        
-//		        // Reading Live cells
-//		        while (sc.hasNextInt()) {
-//		            l[i][0] = sc.nextInt();
-//		            l[i++][1] = sc.nextInt();
-//		        }
-//		        
-//		        // creating instance to CGLVersion2
-//		        Grid c = new Grid();
-//		        
-//		        // creating nextgeneratin by calling nextgenration method
-//		        Game.generateNextGeneration(c.createBoard(n, l));
-//		        sc.close();
-		    }
+	
+	public int countLiveCells(int m,int n,boolean[][] board){
+	      int live_cells=0;
+	      for(int i=m-1;i<=m+1;i++)
+	      {
+	          for(int j=n-1;j<=n+1;j++)
+	          {
+	              if(i!=m || j!=n)
+	              {
+	                  if(i>=0 && i<board.length && j>=0 && j<board.length && board[i][j])
+	                  {
+	                      live_cells+=1;
+	                  }
+	              }
+	          }
+	      }
+	      return live_cells;
+	  }
+		
+	
+	
+	
+	public void generateNextGeneration(boolean board[][]) {
+		 boolean[][] next_gen = new boolean[board.length][board.length];
+	        for(int i=0;i<board.length;i++){
+	            for(int j=0;j<board.length;j++){
+	                int live_cells = countLiveCells(i,j,board);
+
+	                if(board[i][j]){
+	                    if(live_cells<2 || live_cells>3){ 
+	                        next_gen[i][j]=false;
+	                    }
+	                    else if(live_cells<=3)
+	                    {
+	                        next_gen[i][j]=true;
+	                    }
+	                }
+	                else{
+	                    if(live_cells==3){
+	                        next_gen[i][j] = true;
+	                    }
+	                    else{
+	                        next_gen[i][j] = false;
+	                    }
+	                }
+	                
+	                
+	            }
+	        }
+	        printBoard(next_gen);
+	        
+
+		 
+
+	    }
+	
 }
 
