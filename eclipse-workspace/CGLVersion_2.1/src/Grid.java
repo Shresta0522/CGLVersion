@@ -1,5 +1,14 @@
 import java.util.Scanner;
 
+/** *************Rules of Life********************* 
+ * Lonely cell will die ==> aliveNeighbours < 2 ;
+ * Cell will die due to overpopulation ==> aliveNeighbours > 3 
+ * A new cell will born ==> if currently dead cell have aliveNeighbours == 3
+ * 
+ * 
+ * @author <Shresta and <2020501008>
+ */
+
 public class Grid {
 
 	/**
@@ -10,11 +19,11 @@ public class Grid {
 	
 //	private int l[][];
 	private int n;
+	
 	public Grid(int n) {
 		this.n=n;
 		
 	}
-	
 	public boolean[][] createBoard(int n,int l[][]) {
 		int row,col;
         boolean[][] board=new boolean[n][n];
@@ -24,11 +33,17 @@ public class Grid {
         board[row][col]=true;
         }
         System.out.println("CurrentGenration");
+        System.out.println(board);
         return board;
     }
 	
 	
-	//
+	/**
+     * print the board.
+     * @param board[][]
+     * @param n
+     * @return
+     */
 	public void printBoard(boolean board[][]) 
     {
         for(int i=0;i<board.length;i++){
@@ -55,6 +70,10 @@ public class Grid {
 		return n;
 	}
 	
+	
+	/**
+	 * counting the live cells in a board
+	 */
 	public int countLiveCells(int m,int n,boolean[][] board){
 	      int live_cells=0;
 	      for(int i=m-1;i<=m+1;i++)
@@ -74,9 +93,15 @@ public class Grid {
 	  }
 		
 	
+	/**
+     * Method to generate a next generation. Call the printBoard
+     * to print the next generation.
+     * 
+     * @param board[][] board
+     * 
+     */
 	
-	
-	public void generateNextGeneration(boolean board[][]) {
+	public boolean[][] generateNextGeneration(boolean board[][]) {
 		 boolean[][] next_gen = new boolean[board.length][board.length];
 	        for(int i=0;i<board.length;i++){
 	            for(int j=0;j<board.length;j++){
@@ -103,12 +128,8 @@ public class Grid {
 	                
 	            }
 	        }
-	        printBoard(next_gen);
-	        
-
-		 
-
-	    }
+	        return next_gen;
+	}
 	
 }
 
