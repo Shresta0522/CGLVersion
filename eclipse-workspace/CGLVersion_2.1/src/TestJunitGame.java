@@ -54,15 +54,28 @@ public class TestJunitGame {
 	@Test
     public void boardPrintTest(){
 		Grid g1 = new Grid(5);
-		int m[][]= {{1,2},{1,3},{2,2}};
-		boolean[][] tboard=g1.createBoard(5,m);
-		System.out.println("***boardPrintTest**********");
-		g1.printBoard(tboard);
+		boolean[][] eIutput1= {
+				{false,false,false,false,false},
+				{false,false,false,true,false},
+				{false,false,false,false,true},
+				{false,false,false,false,false},
+				{false,false,false,false,false}
+				};
+		String[][] tboard= {
+				{".",".",".",".","."},
+				{".",".",".","*","."},
+				{".",".",".",".","*"},
+				{".",".",".",".","."},
+				{".",".",".",".","."}
+				
+		};
+		
+//		Assertions.asserttrue(g1.printBoard(eIutput1););
 		
 	}
 	
 	/**
-	 * This method test the board created with teh given live cells
+	 * This method test the board created with the given live cells
 	 * 
 	 */
 	@Test
@@ -70,17 +83,24 @@ public class TestJunitGame {
 		Grid g1 = new Grid(5);
 		int m[][]= {{1,3},{2,4}};
 		boolean[][] tboard=g1.createBoard(5,m);
+		boolean[][] eOutput= {
+				{false,false,false,false,false},
+				{false,false,false,true,false},
+				{false,false,false,false,true},
+				{false,false,false,false,false},
+				{false,false,false,false,false}
+				};
 		System.out.println("***createBoardTest**********");
 //		System.out.println(tboard);
-	
-		for (int i=0;i<tboard.length;i++) {
-			for(int j=0;j<tboard[i].length;j++) {
-				System.out.print(tboard[i][j]+" ");
-//				Assertions.assertEquals(true,g1.createBoard(5,m));
-			}
-			System.out.println("");
-		}
-		
+		Assertions.assertEquals(eOutput,tboard);
+//		for (int i=0;i<tboard.length;i++) {
+//			for(int j=0;j<tboard[i].length;j++) {
+//				System.out.print(tboard[i][j]+" ");
+////				Assertions.assertEquals(true,g1.createBoard(5,m));
+//			}
+//			System.out.println("");
+//		}
+//		
 	}
 		
 		/**
@@ -110,10 +130,10 @@ public class TestJunitGame {
 			
 			System.out.println("*******check the generation************");
 			boolean tboard[][]=grid.generateNextGeneration(input);
-			grid.printBoard(tboard);
+//			grid.printBoard(tboard);
 //			Assertions.assertEquals(grid.printBoard(expectedOutput),grid.printBoard(tboard));
 //			String[][] printb=grid.printBoard(tboard);
-//			Assertions.assertEquals(".,.,.,.,.\n.,.,*,*,.\n.,.,*,*,.\n.,.,.,.,.\n",grid.printBoard(tboard));
+			Assertions.assertEquals(".,.,.,.,.\n.,.,*,*,.\n.,.,*,*,.\n.,.,.,.,.\n",tboard);
 		
 		}
 		
@@ -134,9 +154,9 @@ public class TestJunitGame {
 					};
 			System.out.println("******Livecells count****************");
 			
-			System.out.println(g1.countLiveCells(1,3 , inputbox));
+//			System.out.println(g1.countLiveCells(1,3 , inputbox));
 			
-//			Assertions.assertEquals(3,g1.countLiveCells(m, n, inputbox));
+			Assertions.assertEquals(2,g1.countLiveCells(1,3 , inputbox));
 			
 		}
 		
