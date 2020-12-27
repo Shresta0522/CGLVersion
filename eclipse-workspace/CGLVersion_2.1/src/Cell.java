@@ -1,11 +1,33 @@
 
-public class Cell extends Game {
+/**
+ * The Cell class should provide basic operations such as 
+ * add live cells in a particular cell.
+ * 
+ * 
+ * 
+ * @author <Student Name>
+ * 
+ *
+ */
+
+
+public class Cell {
 	
 	private int x;
 	private int y;
 //	private int[][] alive;
 	public boolean aliveCell;
 	
+	/**
+	 * This is a constructs for the input values that is given for the live cells
+	 * x is the row position.
+	 * y is the column position.
+	 * 
+	 *
+	 * @param x
+	 * @param y
+	 * @param aliveCell
+	 */
 	public Cell(int x,int y,boolean aliveCell){
 		this.x=x;
 		this.y=y;
@@ -13,43 +35,40 @@ public class Cell extends Game {
 		
 	}
 	
+
+	/**
+	 * This is a getter method
+	 * returns the x value
+	 */
+	
 	public boolean alive() {
 		return aliveCell;
 		
 		
 	}
 	
-	
+	/**
+	 * This is a getter method
+	 * returns the x value
+	 */
 	public int getx() {
 		return x;
 		
 	}
 	
+	/**
+	 * This is a getter method
+	 * returns the y value
+	 */
 	public int gety() {
 		return y;
 		
 	}
-	
-//	public int countLiveCells(int m,int n,boolean[][] board){
-//        int live_cells=0;
-//        for(int i=m-1;i<=m+1;i++)
-//        {
-//            for(int j=n-1;j<=n+1;j++)
-//            {
-//                if(i!=m || j!=n)
-//                {
-//                    if(i>=0 && i<board.length && j>=0 && j<board.length && board[i][j])
-//                    {
-//                        live_cells+=1;
-//                    }
-//                }
-//            }
-//        }
-//        return live_cells;
-//    }
-	
-	
-	
-	
-	
 }
+	
+	
+	
+	
+	
+	
+

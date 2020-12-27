@@ -1,5 +1,18 @@
 import java.util.Scanner;
 
+/**
+ * The Game class should provide basic operations such as 
+ * generating next generation until it stops.
+ * 
+ * 
+ * 
+ *
+ * @author Shresta
+ * 
+ *
+ */
+
+
 public class Game {
 	
 	
