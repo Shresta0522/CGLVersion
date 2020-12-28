@@ -45,14 +45,12 @@ public class Grid {
      * @param l[][]  array of live cells
      */
 	public boolean[][] createBoard(int n,int l[][]) {
-		int row,col;
+		
         boolean[][] board=new boolean[n][n];
         for(int i=0;i<l.length;i++){
-        row=l[i][0];
-        col=l[i][1];
-        board[row][col]=true;
+        	board[l[i][0]][l[i][1]]=true;
         }
-        System.out.println("CurrentGenration");
+        System.out.println("Current Genration");
         System.out.println();
         return board;
     }

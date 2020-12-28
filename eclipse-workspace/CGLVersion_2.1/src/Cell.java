@@ -18,6 +18,7 @@ public class Cell {
 //	private int[][] alive;
 	public boolean aliveCell;
 	
+	
 	/**
 	 * This is a constructs for the input values that is given for the live cells
 	 * x is the row position.

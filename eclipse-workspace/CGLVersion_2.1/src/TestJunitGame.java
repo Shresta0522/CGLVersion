@@ -53,7 +53,7 @@ public class TestJunitGame {
 	 */
 	@Test
     public void boardPrintTest(){
-		GridBoard g1 = new GridBoard(5);
+		Grid g1 = new Grid(5);
 		boolean[][] eIutput1= {
 				{false,false,false,false,false},
 				{false,false,false,true,false},
