@@ -53,7 +53,7 @@ public class TestJunitGame {
 	 */
 	@Test
     public void boardPrintTest(){
-		Grid g1 = new Grid(5);
+		GridBoard g1 = new GridBoard(5);
 		boolean[][] eIutput1= {
 				{false,false,false,false,false},
 				{false,false,false,true,false},
@@ -69,8 +69,9 @@ public class TestJunitGame {
 				{".",".",".",".","."}
 				
 		};
-		
-//		Assertions.asserttrue(g1.printBoard(eIutput1););
+		g1.printBoard(eIutput1);
+//		System.out.println(g1.printBoard(eIutput1));
+//		Assertions.assertEquals(tboard,g1.printBoard(c));
 		
 	}
 	
