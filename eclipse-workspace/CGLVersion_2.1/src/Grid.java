@@ -1,4 +1,12 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
+
+
+
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
 /**
  * The Grid class should provide basic operations such as 
@@ -31,14 +39,42 @@ public class Grid {
      * @param l[][]  array of live cells
      */
 	
-//	private int l[][];
+	private int l[][];
+	private boolean[][] board;
 	private int n;
+	private String str_FileName;
 	
 	public Grid(int n) {
 		this.n=n;
 		
 	}
 	
+	public Grid(int n,int l[][]) {
+		this.n=n;
+		this.l=l;
+		
+	}
+	
+	public Grid(int n, String str_FileName) {
+		this.n=n;
+		this.setBoard(new boolean[n][n]);
+		Scanner sc;
+		try {
+			sc = new Scanner(new File(str_FileName));
+			while(sc.hasNextLine()) {
+				String[] line=sc.nextLine().split(" ");
+				int row=Integer.parseInt(line[0]);
+				int col=Integer.parseInt(line[1]);
+				getBoard()[row][col]=true;
+				System.out.println(getBoard());
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	// TODO Auto-generated constructor stub
+	}
+	
+
 	/**
      * Creates initial generate[]
      * @param n  size of the board n X n
@@ -54,6 +90,10 @@ public class Grid {
         System.out.println();
         return board;
     }
+	
+	
+
+	
 	
 	
 	/**
@@ -92,7 +132,28 @@ public class Grid {
     }
 	
 	
-	
+	public void fillTheCanvas(Pane pane) 
+	{
+		for(int i=0;i<n;i++) 
+		{
+			for (int j=0;j<n;j++) 
+			{
+				if(getBoard()[i][j])
+				{
+					Rectangle r= new Rectangle(6,6);
+					r.setX(6*i);
+					r.setY(6*j);
+					r.setFill(Color.BLACK);
+					pane.getChildren().add(r);
+					
+					
+				}
+				
+				
+			}
+			
+		}
+	}
 	
 	
 	/**
@@ -163,5 +224,37 @@ public class Grid {
 	        return next_gen;
 	}
 	
-}
+	public String  toString() {
+		
+		String print="";
+		for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++)
+            {
+            	
+                if(getBoard()[i][j]){
+//                    System.out.print("*");
+                	print+="*";
+                }
+                else{
+//                    System.out.print(".");
+                    print+=".";
+                }
+                
+            }
+            print+="\n";
+		}
+		
+		return print;
+		
+		
+		
+	}
 
+	public boolean[][] getBoard() {
+		return board;
+	}
+
+	public void setBoard(boolean[][] board) {
+		this.board = board;
+	}
+}

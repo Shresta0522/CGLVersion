@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
  * addition, subtraction, multiplication and division.
  * 
  * 
- * @author <Student Name>
+ * @author <Shresta>
  * 
  * @version: 1.0
  */
