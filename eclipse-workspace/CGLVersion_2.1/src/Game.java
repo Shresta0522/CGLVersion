@@ -14,19 +14,12 @@ import java.util.Scanner;
 
 
 public class Game {
-	
-	
-	/**
-	 * @author <Shresta and <2020501008>
-	 * @param noOfGenerations
-	 */
-//	public int noOfGenerations;
-//	
-//	
-//	 
+	 
 	/**
 	 * 
-	 * main method
+	 * main method reads the input for size of the board 
+	 * Reads the live cells given from the input which will be the first generation.
+	 * It prints the next generation board of the given  current board
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -54,38 +47,12 @@ public class Game {
         // creating nextgenratin by calling nextgenration method
         c.generateNextGeneration(c.createBoard(n, l));
         c.printBoard(c.generateNextGeneration(c.createBoard(n, l)));
+    
+        sc.close();
     }
 	
-//	public static void main(String[] args) {
-////        Scanner sc = new Scanner(System.in);
-//        
-//        // Reading size of the Board
-//        int n = 10;
-//        
-//        // Reading no. of initial live cells
-////        int m = sc.nextInt();
-//        int[][] l ={
-//       		 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-//       		 {0, 0, 0, 1, 1, 0, 0, 0, 0, 0},
-//       		 {0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-//       		 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-//       		 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-//       		 {0, 0, 0, 1, 1, 0, 0, 0, 0, 0},
-//       		 {0, 0, 1, 1, 0, 0, 0, 0, 0, 0},
-//       		 {0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-//       		 {0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-//       		 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-//       		 
-//       		};
-//        
-//        // creating instance to CGLVersion2
-//        Grid c = new Grid(n);
-//        
-//        // creating next generation by calling next generation method
-//        c.printBoard(c.createBoard(n, l));
-//        System.out.println("####################################");
-//        c.generateNextGeneration(c.createBoard(n, l));
-//        
-////        sc.close();
-//    }
-}
+
+		
+    }
+	
+

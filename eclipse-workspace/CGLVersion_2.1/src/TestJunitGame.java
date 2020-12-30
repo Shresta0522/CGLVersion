@@ -2,11 +2,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 /**
- * The ComplexNumber class should provide basic operations such as 
- * addition, subtraction, multiplication and division.
+ * The TestUnitGame class test the methods of the game.
  * 
- * 
- * @author <Shresta>
+ * @author <Shresta> 2020501008
  * 
  * @version: 1.0
  */
@@ -15,7 +13,7 @@ public class TestJunitGame {
 	
 
 	/**
-	 * This method
+	 * This method test the position of the  given row.
 	 * 
 	 */
 	@Test
@@ -26,7 +24,7 @@ public class TestJunitGame {
 	}
 	
 	/**
-	 * This method
+	 *  This method test the position of the  given column .
 	 * 
 	 */
 	@Test
@@ -37,7 +35,7 @@ public class TestJunitGame {
 	}
 	
 	/**
-	 * This method
+	 * This method test the position of the  given column.
 	 * 
 	 */
 	@Test
@@ -48,7 +46,7 @@ public class TestJunitGame {
 	}
 	
 	/**
-	 * This method
+	 * This method test the printboard method
 	 * 
 	 */
 	@Test
@@ -71,7 +69,7 @@ public class TestJunitGame {
 		};
 		g1.printBoard(eIutput1);
 //		System.out.println(g1.printBoard(eIutput1));
-//		Assertions.assertEquals(tboard,g1.printBoard(c));
+		Assertions.assertEquals(tboard,eIutput1.toString());
 		
 	}
 	
@@ -139,7 +137,7 @@ public class TestJunitGame {
 		}
 		
 		/**
-		 * This method
+		 * This method test counts the live cells around a given cell position
 		 * 
 		 */
 		

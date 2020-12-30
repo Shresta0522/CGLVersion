@@ -26,6 +26,9 @@ import javafx.scene.shape.Rectangle;
  * @author Lynn Robert Carter
  * @co-author Shresta 2020501008
  * 
+ *Shruthi helped me for debugging the code.
+ * 
+ * 
  * @version 2.03	2018-05-07 An implementation baseline for JavaFX graphics
  * 
  */
@@ -267,7 +270,9 @@ public class UserInterface {
 	 */
 	private void loadImageData() {
 		try {
-			oddGameBoard = new Grid(80,str_FileName);
+			//oddgameboard will get the first generation from the grid board using the parameter of the filename and size of the board.
+			oddGameBoard = new Grid(80,str_FileName); 
+			//evenboard will get the first generation of board for the given size of the board.
 			evenGameBoard = new Grid(80);
 			
 			
