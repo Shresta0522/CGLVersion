@@ -53,8 +53,8 @@ public class Grid {
      */
 	
 	private int l[][];
-	private boolean[][] board;
-	private int n;
+	private boolean[][] board;//boolean array
+	private int n; //size of the board
 //	private String str_FileName;
 	
 	public Grid(int n) {
@@ -76,20 +76,20 @@ public class Grid {
 	 * @param n
 	 * @param str_FileName
 	 */
-	public Grid(int n, String str_FileName) {
+	public Grid(int n, String str_FileName) { //contructor takes the size of the board and the filename
 		this.n=n;
 		this.setBoard(new boolean[n][n]);
 		Scanner sc;
 		try {
-			sc = new Scanner(new File(str_FileName));
-			while(sc.hasNextLine()) {
-				String[] line=sc.nextLine().split(" ");
-				int row=Integer.parseInt(line[0]);
-				int col=Integer.parseInt(line[1]);
-				getBoard()[row][col]=true;
-				System.out.println(getBoard());
+			sc = new Scanner(new File(str_FileName));//  reads the file
+			while(sc.hasNextLine()) {	// spliting the input line by line.
+				String[] line=sc.nextLine().split(" "); //again spliting the imput with space.
+				int row=Integer.parseInt(line[0]); 		//converting the firststring s[0] into integer
+				int col=Integer.parseInt(line[1]); 		//converting the firststring s[1] into integer
+				getBoard()[row][col]=true;				//taking the above row and column in postion in the board and changing it to live cell 
+				System.out.println(getBoard());			//print the board the  with the live cells.
 			}
-		} catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e) { 		//exception is handled if the fileis incorrect.
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	// TODO Auto-generated constructor stub
@@ -101,7 +101,7 @@ public class Grid {
      * @param n  size of the board n X n
      * @param l[][]  array of live cells
      */
-	public boolean[][] createBoard(int n,int l[][]) {
+	public boolean[][] createBoard(int n,int l[][]) { 
 		
         boolean[][] board=new boolean[n][n];
         for(int i=0;i<l.length;i++){
