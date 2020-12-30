@@ -24,6 +24,7 @@ import javafx.scene.shape.Rectangle;
  * <p> Copyright: Lynn Robert Carter © 2018-05-06 </p>
  * 
  * @author Lynn Robert Carter
+ * @co-author Shresta 2020501008
  * 
  * @version 2.03	2018-05-07 An implementation baseline for JavaFX graphics
  * 
@@ -311,7 +312,15 @@ public class UserInterface {
 	 * This method is run each time the timeline triggers it
 	 */
 	public void runSimulation(){
-		
+		/**
+		 * This if block will run if the toggle value is false
+		 * first it removes the evencanvas,
+		 * update the oddGameBoard with nextgeneration.
+		 * Create a new Canvas for odd.
+		 * filling the evenCanvas with oddboard.
+		 * adding the odd canvas to the window
+		 * lastly changing the toggle value
+		 */
 		if(!toggle) {
 //			window.getChildren().remove(oddCanvas);
 //			evenCanvas=new Pane();
@@ -322,7 +331,17 @@ public class UserInterface {
 			window.getChildren().add(oddCanvas);
 			toggle=!toggle;
 		}
+		/**
+		 * This else block will run if the toggle value is true
+		 * first it removes the oddcanvas,
+		 * update the evenGameBoard with nextgeneration.
+		 * Create a new Canvas for even.
+		 * filling the evenCanvas with evenboard.
+		 * adding the even canvas to the window
+		 * lastly changing the toggle value 
+		 */
 		else {
+		
 //			window.getChildren().remove(evenCanvas);
 //			oddCanvas=new Pane();
 //			oddGameBoard.fillTheCanvas(oddCanvas);
@@ -331,8 +350,6 @@ public class UserInterface {
 			evenCanvas=new Pane();
 			evenGameBoard.fillTheCanvas(evenCanvas);
 			window.getChildren().add(evenCanvas);
-			
-			
 			toggle=!toggle;
 		}
 		// Use the toggle to flip back and forth between the current generation and next generation boards.

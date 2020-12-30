@@ -55,6 +55,14 @@ public class Grid {
 		
 	}
 	
+	/**
+	 * This constructor takes the size and the input file.Input file is read.
+	 * The input file has live cells position accordingly boolean board is added with live cells in that positions.
+	 * n is the size of the board.
+	 * str_FileName is the input file.
+	 * @param n
+	 * @param str_FileName
+	 */
 	public Grid(int n, String str_FileName) {
 		this.n=n;
 		this.setBoard(new boolean[n][n]);
@@ -130,7 +138,12 @@ public class Grid {
 //        System.out.println(print);
 //        return print;
     }
-	
+	/**
+	 * This method to color the live cells with black and prints it on the window.
+	 * 
+	 * 
+	 * @param pane
+	 */
 	
 	public void fillTheCanvas(Pane pane) 
 	{
@@ -143,13 +156,11 @@ public class Grid {
 					Rectangle r= new Rectangle(6,6);
 					r.setX(6*i);
 					r.setY(6*j);
-					r.setFill(Color.BLACK);
+					r.setFill(Color.GREY);
 					pane.getChildren().add(r);
 					
 					
 				}
-				
-				
 			}
 			
 		}
@@ -223,7 +234,12 @@ public class Grid {
 	        }
 	        return next_gen;
 	}
-	
+	/**
+	 * This method is to print the board.
+	 * it return the String.
+	 * 
+	 * 
+	 */
 	public String  toString() {
 		
 		String print="";
